@@ -5,3 +5,10 @@
 h1 {
     color: white;
 }
+.logo {
+    position: absolute;
+    top: 20px; /* Adjust the top position as needed */
+    right: 20px; /* Adjust the right position as needed */
+    width: 500px; /* Adjust the width as needed */
+    height: auto;
+}
