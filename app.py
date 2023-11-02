@@ -2,45 +2,11 @@ import streamlit as st
 import pandas as pd
 
 # Add custom CSS to style the app
-st.markdown(
-    """
-    <style>
-    /* Add CSS styles here */
-    body {
-        background-color: #0074E4; /* Blue background color */
-    }
 
-    /* Style the title */
-    .title {
-        color: #FFFFFF; /* White text color */
-    }
-
-    /* Style the sliders */
-    .slider-container {
-        background-color: #FFFFFF; /* White background color for sliders */
-        padding: 10px;
-        border-radius: 10px;
-        margin: 10px 0;
-    }
-
-    .slider-label {
-        color: #0074E4; /* Blue text color for slider labels */
-    }
-
-    /* Style the result section */
-    .result-section {
-        background-color: #FFFFFF; /* White background color for results */
-        padding: 20px;
-        border-radius: 10px;
-        margin: 10px 0;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 st.title("Carbon Footprint Calculator")
-st.markdown("<h1 class='title'>Carbon Footprint Calculator</h1>", unsafe_allow_html=True)
 
 # Load data from CSV file
 @st.cache
