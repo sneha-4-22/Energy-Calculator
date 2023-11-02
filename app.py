@@ -5,8 +5,10 @@ import pandas as pd
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-st.markdown('<img src="ecos.png" class="logo">', unsafe_allow_html=True)
+
 st.title("Carbon Footprint Calculator")
+# image = st.image("assests/bg2.png", caption="Your Image Caption", use_column_width=True)
+image = st.image("assests/bg2.png", caption="Your Image Caption", use_column_width=True, output_format="auto")
 
 # Load data from CSV file
 @st.cache
