@@ -28,12 +28,13 @@ with col1:
 
 # Manual input boxes for energy sources in the second column
 with col2:
-    coal_percent_manual = st.number_input("Coal % (Manual Input)", 0, 100, 0)
-    gas_percent_manual = st.number_input("Gas % (Manual Input)", 0, 100, 0)
-    oil_percent_manual = st.number_input("Oil % (Manual Input)", 0, 100, 0)
-    hydro_percent_manual = st.number_input("Hydro % (Manual Input)", 0, 100, 0)
-    renewable_percent_manual = st.number_input("Renewable % (Manual Input)", 0, 100, 0)
-    nuclear_percent_manual = st.number_input("Nuclear % (Manual Input)", 0, 100, 0)
+    coal_percent_manual = st.number_input("Coal % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f")
+    gas_percent_manual = st.number_input("Gas % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f")
+    oil_percent_manual = st.number_input("Oil % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f")
+    hydro_percent_manual = st.number_input("Hydro % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f")
+    renewable_percent_manual = st.number_input("Renewable % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f")
+    nuclear_percent_manual = st.number_input("Nuclear % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f")
+
 
 # Calculate CO2 emissions
 coal_CO2 = data[data['Country'] == selected_country]["Coal"].values[0]
