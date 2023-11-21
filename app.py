@@ -21,8 +21,6 @@ with col1:
     hydro_percent = st.slider("Hydro %", 0.0, 100.0, 0.0, key="hydro_slider")
     renewable_percent = st.slider("Renewable %", 0.0, 100.0, 0.0, key="renewable_slider")
     nuclear_percent = st.slider("Nuclear %", 0.0, 100.0, 0.0, key="nuclear_slider")
-
-# Manual input boxes for energy sources in the second column
 with col2:
     coal_percent_manual = st.number_input("Coal % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f", key="coal_manual")
     gas_percent_manual = st.number_input("Gas % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f", key="gas_manual")
@@ -31,37 +29,14 @@ with col2:
     renewable_percent_manual = st.number_input("Renewable % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f", key="renewable_manual")
     nuclear_percent_manual = st.number_input("Nuclear % (Manual Input)", 0.0, 100.0, 0.0, format="%.2f", key="nuclear_manual")
 
-# Bidirectional synchronization button
-sync_button = st.button("Sync Values")
 
-# Function to synchronize values bidirectionally
-def sync_values():
-    global coal_percent, gas_percent, oil_percent, hydro_percent, renewable_percent, nuclear_percent
-    global coal_percent_manual, gas_percent_manual, oil_percent_manual, hydro_percent_manual, renewable_percent_manual, nuclear_percent_manual
-    
-    coal_percent = coal_percent_manual
-    gas_percent = gas_percent_manual
-    oil_percent = oil_percent_manual
-    hydro_percent = hydro_percent_manual
-    renewable_percent = renewable_percent_manual
-    nuclear_percent = nuclear_percent_manual
-    
-    coal_percent_manual = coal_percent
-    gas_percent_manual = gas_percent
-    oil_percent_manual = oil_percent
-    hydro_percent_manual = hydro_percent
-    renewable_percent_manual = renewable_percent
-    nuclear_percent_manual = nuclear_percent
+coal_percent_total = coal_percent_manual if coal_percent_manual else coal_percent
+gas_percent_total = gas_percent_manual if gas_percent_manual else gas_percent
+oil_percent_total = oil_percent_manual if oil_percent_manual else oil_percent
+hydro_percent_total = hydro_percent_manual if hydro_percent_manual else hydro_percent
+renewable_percent_total = renewable_percent_manual if renewable_percent_manual else renewable_percent
+nuclear_percent_total = nuclear_percent_manual if nuclear_percent_manual else nuclear_percent
 
-if sync_button:
-    sync_values()
-
-coal_percent_total = coal_percent + coal_percent_manual
-gas_percent_total = gas_percent + gas_percent_manual
-oil_percent_total = oil_percent + oil_percent_manual
-hydro_percent_total = hydro_percent + hydro_percent_manual
-renewable_percent_total = renewable_percent + renewable_percent_manual
-nuclear_percent_total = nuclear_percent + nuclear_percent_manual
 
 Overall_Emission = (coal_percent_total + gas_percent_total + oil_percent_total +
                    hydro_percent_total + renewable_percent_total + nuclear_percent_total)
@@ -77,9 +52,6 @@ kgCO2_result = ((coal_percent_total * coal_CO2 + gas_percent_total * gas_CO2 + o
                  hydro_percent_total * hydro_CO2 + renewable_percent_total * renewable_CO2 +
                  nuclear_percent_total * nuclear_CO2) / 100000)
 
-# Calculate trees required and price required
-# trees_required = kgCO2_result / 15.7
-# price_required_inr = (trees_required / 10) * 83.32
 
 st.markdown("<div class='result-section'>", unsafe_allow_html=True)
 st.write("Overall Emission %:", Overall_Emission)

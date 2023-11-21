@@ -10,9 +10,9 @@ h1 {
     border: 2px solid red;
     border-radius: 10px;
     transform: rotate(10deg);
-    width: 30px; /* Set the width as needed */
-    height: 20px; /* Set the height as needed */
-     position: relative; /* Set the positioning as needed */
+    width: 30px; 
+    height: 20px;
+     position: relative;
      top: 20px;
     
 }
