@@ -4,6 +4,10 @@
 
 This repository contains the source code for a simple Carbon Footprint Calculator App built using Streamlit and Python. The app allows users to estimate their carbon footprint based on the energy consumption mix in their selected country.
 
+## Development Link
+
+The app is deployed and accessible at [https://sneha-4-22-energy-calculator-app-ngrq34.streamlit.app/](https://sneha-4-22-energy-calculator-app-ngrq34.streamlit.app/).
+
 ## Features
 
 - Select a country from the dropdown menu.
@@ -15,28 +19,22 @@ This repository contains the source code for a simple Carbon Footprint Calculato
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/carbon-footprint-app.git
+    git clone https://github.com/sneha-4-22/Energy-Calculator.git
     ```
 
-2. **Navigate to the project directory:**
-
-    ```bash
-    cd carbon-footprint-app
-    ```
-
-3. **Install the required dependencies:**
+2. **Install the required dependencies:**
 
     ```bash
     pip install streamlit
     ```
     
-4. **Run the app:**
+3. **Run the app:**
 
     ```bash
     streamlit run app.py
     ```
 
-5. **Open your web browser and go to [http://localhost:8501](http://localhost:8501) to access the app.**
+4. **Open your web browser and go to [http://localhost:8501](http://localhost:8501) to access the app.**
 
 ## How to Use
 
@@ -44,9 +42,6 @@ This repository contains the source code for a simple Carbon Footprint Calculato
 2. Adjust the percentage of energy consumption from different sources using sliders or manual input.
 3. View the overall emission percentage and CO2 emissions in tons.
 
-## Development Link
-
-The app is deployed and accessible at [https://sneha-4-22-energy-calculator-app-ngrq34.streamlit.app/](https://sneha-4-22-energy-calculator-app-ngrq34.streamlit.app/).
 
 ## Data Source
 
